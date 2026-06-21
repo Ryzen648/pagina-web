@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Ricardo Jaico Pradinett</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('depositphotos_359096738-stock-illustration-artificial-intelligence-logo-plexus-effect.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .a4-container {
+            /* Posición relativa para poder ubicar el escudo de la UNMSM en la esquina */
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 40px 20px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        /* Estilos para el escudo de la UNMSM */
+        .unmsm-logo {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            width: 80px; /* Puedes cambiar este valor si lo quieres más grande o pequeño */
+            height: auto;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.3));
+            transition: transform 0.3s;
+        }
+
+        .unmsm-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid rgba(0, 210, 255, 0.3);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            padding-right: 80px; /* Espacio para que el texto no choque con el escudo */
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00d2ff;
+            margin-right: 35px;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+        }
+
+        .title-section h1 {
+            margin: 0;
+            font-size: 2.2em;
+            color: #00d2ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .title-section h2 {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            font-weight: 400;
+            color: #cbd5e1;
+        }
+
+        .content-section {
+            line-height: 1.7;
+            font-size: 1.15em;
+            color: #e2e8f0;
+            text-align: justify;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .card h3 {
+            color: #00d2ff;
+            margin-top: 0;
+            border-bottom: 1px solid rgba(0, 210, 255, 0.3);
+            padding-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            font-size: 1.05em;
+        }
+
+        ul li::before {
+            content: '▹';
+            color: #00d2ff;
+            font-weight: bold;
+            font-size: 1.2em;
+            display: inline-block;
+            width: 1em;
+            margin-left: -0.5em;
+        }
+
+        a {
+            color: #00d2ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
+        }
+
+        .course-info {
+            margin-top: 35px;
+            background: linear-gradient(90deg, rgba(0, 210, 255, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .course-info p {
+            margin: 8px 0;
+            font-size: 1.1em;
+        }
+
+        /* Diseño responsivo para pantallas más pequeñas */
+        @media (max-width: 700px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding-right: 0;
+                margin-top: 50px; /* Espacio para el logo arriba */
+            }
+            .profile-pic {
+                margin: 0 0 25px 0;
+            }
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            .unmsm-logo {
+                top: 20px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            .unmsm-logo:hover {
+                transform: translateX(50%) scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="a4-container">
+        <!-- Imagen del Escudo de la UNMSM -->
+        <img src="escudo_unmsm.png" alt="Escudo UNMSM" class="unmsm-logo">
+
+        <div class="header">
+            <!-- Tu foto de perfil -->
+            <img src="tu_foto.jpg" alt="Ricardo Jaico Pradinett" class="profile-pic">
+            <div class="title-section">
+                <h1>Ricardo Miguel Jaico Pradinett</h1>
+                <h2>Estudiante de Ingeniería de Inteligencia Artificial</h2>
+                <h2>Facultad de Ingeniería de Sistemas e Informática - UNMSM</h2>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <p>¡Hola! Me considero una persona curiosa, en constante aprendizaje y con una gran vocación por resolver problemas a través de la tecnología y el pensamiento lógico.</p>
+            <p>Formo parte de un entorno académico riguroso que me prepara para afrontar los retos tecnológicos del futuro. Mi meta es aplicar estos conocimientos para crear soluciones innovadoras que tengan un impacto positivo en la sociedad.</p>
+        </div>
+
+        <div class="grid-container">
+            <div class="card">
+                <h3>Pasiones y Recreación</h3>
+                <ul>
+                    <li>Programar proyectos</li>
+                    <li>Jugar videojuegos</li>
+                    <li>Seguir el fútbol</li>
+                    <li>Pasear a mi husky, Balto</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/Ryzen648" target="_blank">Ryzen648</a></li>
+                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ricardo-jaico-pradinett-a66124368/" target="_blank">Perfil Profesional</a></li>
+                    <li><strong>Correo:</strong> <a href="mailto:rjaicopradinett@gmail.com">rjaicopradinett@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="course-info">
+            <h3>Información del Curso</h3>
+            <p><strong>Asignatura:</strong> Introducción a las Ciencias de la Computación</p>
+            <p><strong>Profesor:</strong> Dr. Ernesto Cuadros-Vargas</p>
+        </div>
+    </div>
+</body>
+</html>
