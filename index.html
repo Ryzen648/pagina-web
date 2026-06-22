@@ -21,7 +21,6 @@
         }
 
         .a4-container {
-            /* Posición relativa para poder ubicar el escudo de la UNMSM en la esquina */
             position: relative;
             width: 100%;
             max-width: 800px;
@@ -35,19 +34,27 @@
             box-sizing: border-box;
         }
 
-        /* Estilos para el escudo de la UNMSM */
-        .unmsm-logo {
+        /* NUEVO: Contenedor para agrupar ambos logos */
+        .logos-container {
             position: absolute;
             top: 35px;
             right: 35px;
-            width: 80px; /* Puedes cambiar este valor si lo quieres más grande o pequeño */
+            display: flex;
+            flex-direction: column; /* Apila los logos verticalmente */
+            gap: 15px; /* Espacio entre los dos logos */
+            align-items: center;
+        }
+
+        /* ACTUALIZADO: Clase general compartida para mantener el mismo tamaño y efectos */
+        .logo-img {
+            width: 80px; 
             height: auto;
             opacity: 0.9;
             filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.3));
             transition: transform 0.3s;
         }
 
-        .unmsm-logo:hover {
+        .logo-img:hover {
             transform: scale(1.1);
         }
 
@@ -57,7 +64,7 @@
             border-bottom: 2px solid rgba(0, 210, 255, 0.3);
             padding-bottom: 25px;
             margin-bottom: 25px;
-            padding-right: 80px; /* Espacio para que el texto no choque con el escudo */
+            padding-right: 100px; /* Aumentado un poco para que no choque con los dos logos */
         }
 
         .profile-pic {
@@ -175,7 +182,7 @@
                 flex-direction: column;
                 text-align: center;
                 padding-right: 0;
-                margin-top: 50px; /* Espacio para el logo arriba */
+                margin-top: 90px; /* Aumentado para dar espacio a ambos logos */
             }
             .profile-pic {
                 margin: 0 0 25px 0;
@@ -183,24 +190,26 @@
             .grid-container {
                 grid-template-columns: 1fr;
             }
-            .unmsm-logo {
+            /* ACTUALIZADO: Comportamiento en móviles */
+            .logos-container {
                 top: 20px;
                 right: 50%;
                 transform: translateX(50%);
-            }
-            .unmsm-logo:hover {
-                transform: translateX(50%) scale(1.1);
+                flex-direction: row; /* Los pone lado a lado en móviles para ahorrar espacio vertical */
+                gap: 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="a4-container">
-        <!-- Imagen del Escudo de la UNMSM -->
-        <img src="UNMSM_coatofarms_seal.svg.png" alt="Escudo UNMSM" class="unmsm-logo">
+        
+        <div class="logos-container">
+            <img src="UNMSM_coatofarms_seal.svg.png" alt="Escudo UNMSM" class="logo-img">
+            <img src="logo-fisi.png" alt="Logo FISI" class="logo-img">
+        </div>
 
         <div class="header">
-            <!-- Tu foto de perfil -->
             <img src="formato.png" alt="Ricardo Jaico Pradinett" class="profile-pic">
             <div class="title-section">
                 <h1>Ricardo Miguel Jaico Pradinett</h1>
@@ -238,7 +247,7 @@
         <div class="course-info">
             <h3>Información del Curso</h3>
             <p><strong>Asignatura:</strong> Introducción a las Ciencias de la Computación</p>
-            <li><strong>Profesor:</strong> Dr. <a href=" https://www.linkedin.com/in/ecuadrosv/"> Ernesto Cuadros Vargas </a></li>
+            <p><strong>Profesor:</strong> Dr. <a href=" https://www.linkedin.com/in/ecuadrosv/" target="_blank"> Ernesto Cuadros Vargas </a></p>   
         </div>
     </div>
 </body>
