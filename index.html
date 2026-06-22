@@ -152,6 +152,7 @@
         .icon-list li::before {
             display: none;
         }
+
         .list-icon {
             width: 22px;
             height: 22px;
@@ -183,6 +184,17 @@
         .course-info p {
             margin: 8px 0;
             font-size: 1.1em;
+        }
+
+        
+        .profesor-icon {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin: 0 8px;
+            object-fit: cover;
+            border: 1px solid rgba(0, 210, 255, 0.5); 
         }
 
         @media (max-width: 700px) {
@@ -276,7 +288,11 @@
         <div class="course-info">
             <h3>Información del Curso</h3>
             <p><strong>Asignatura:</strong> Introducción a las Ciencias de la Computación</p>
-            <p><strong>Profesor:</strong> Dr. <a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank">Ernesto Cuadros Vargas</a></p>  
+            <p>
+                <strong>Profesor:</strong> 
+                <img src="profesor.jpg" alt="Profesor" class="profesor-icon">
+                Dr. <a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank">Ernesto Cuadros Vargas</a>
+            </p>  
         </div>
     </div>
 </body>
