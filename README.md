@@ -1,1 +1,1 @@
-# https://ryzen648.github.io/
+# ryzen648
